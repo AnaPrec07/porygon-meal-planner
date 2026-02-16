@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "server": "cd server && python app.py",
+    "server:start": "cd server && gunicorn -b 0.0.0.0:3001 app:app"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
@@ -44,6 +46,7 @@
     "cmdk": "1.1.1",
     "date-fns": "3.6.0",
     "embla-carousel-react": "8.6.0",
+    "firebase": "^10.14.0",
     "input-otp": "1.4.2",
     "lucide-react": "0.487.0",
     "motion": "12.23.24",

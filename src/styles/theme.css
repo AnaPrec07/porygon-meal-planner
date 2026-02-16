@@ -126,6 +126,7 @@
 
   body {
     @apply bg-background text-foreground;
+    min-height: 100vh;
   }
 
   /**
@@ -135,6 +136,8 @@
 
   html {
     font-size: var(--font-size);
+    /* Safe area when launched from home screen (notched devices) */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 
   h1 {
