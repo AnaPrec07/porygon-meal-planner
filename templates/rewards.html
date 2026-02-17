@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porygon Meal Planner - Rewards</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Your Rewards</h1>
+    <div class="rewards-panel">
+        <div>Points: {{ stats.points }}</div>
+        <div>Streak: {{ stats.streak }} days</div>
+        <h2>Badges</h2>
+        <ul>
+            {% for badge in badges %}
+                <li>{{ badge.badge_name }} - {{ badge.badge_description }} ({{ badge.earned_at }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="/">Chat</a> |
+    <a href="/meal-plan">Meal Plan</a> |
+    <a href="/grocery">Grocery List</a> |
+    <a href="/inventory">Inventory</a>
+</body>
+</html>

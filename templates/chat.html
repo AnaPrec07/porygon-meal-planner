@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porygon Meal Planner - Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Nutrition Coach Chat</h1>
+    <form method="POST">
+        <input type="text" name="message" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+    </form>
+    <div class="chat-messages">
+        {% for msg in messages %}
+            <div class="{{ msg.role }}-msg">
+                <strong>{{ msg.role|capitalize }}:</strong> {{ msg.content }}
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/meal-plan">Meal Plan</a> |
+    <a href="/grocery">Grocery List</a> |
+    <a href="/inventory">Inventory</a> |
+    <a href="/rewards">Rewards</a>
+</body>
+</html>

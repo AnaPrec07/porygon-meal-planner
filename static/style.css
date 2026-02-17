@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0fdf4;
+    margin: 0;
+    padding: 2rem;
+}
+h1 {
+    color: #10b981;
+}
+form, .chat-messages, .meal-plan, .grocery-list, .inventory-list, .rewards-panel {
+    margin-bottom: 2rem;
+}
+.user-msg {
+    background: #e0f7fa;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+.assistant-msg {
+    background: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+a {
+    color: #10b981;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+a:hover {
+    text-decoration: underline;
+}

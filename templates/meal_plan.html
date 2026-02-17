@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porygon Meal Planner - Meal Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Weekly Meal Plan</h1>
+    <div class="meal-plan">
+        {% for day in meal_plan %}
+            <h2>{{ day.day }}</h2>
+            <ul>
+                {% for meal in day.meals %}
+                    <li>
+                        <strong>{{ meal.name }}</strong> ({{ meal.time }}, {{ meal.calories }} cal, {{ meal.prepTime }})
+                        {% if meal.ingredients %}
+                        <ul>
+                            {% for ing in meal.ingredients %}
+                                <li>{{ ing }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+    <a href="/">Chat</a> |
+    <a href="/grocery">Grocery List</a> |
+    <a href="/inventory">Inventory</a> |
+    <a href="/rewards">Rewards</a>
+</body>
+</html>

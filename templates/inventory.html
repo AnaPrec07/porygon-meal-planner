@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porygon Meal Planner - Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Inventory</h1>
+    <div class="inventory-list">
+        {% for category, items in inventory_by_category.items() %}
+            <h2>{{ category }}</h2>
+            <ul>
+                {% for item in items %}
+                    <li>{{ item.name }}: {{ item.quantity }} {{ item.unit }} (Planned: {{ item.plannedQuantity }})</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+    <a href="/">Chat</a> |
+    <a href="/meal-plan">Meal Plan</a> |
+    <a href="/grocery">Grocery List</a> |
+    <a href="/rewards">Rewards</a>
+</body>
+</html>

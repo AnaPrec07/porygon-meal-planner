@@ -21,7 +21,7 @@ def get_database_uri():
 
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-change-in-production")
-    SQLALCHEMY_DATABASE_URI = get_database_uri()
+    SQLALCHEMY_DATABASE_URI = "sqlite:///dev.db" #get_database_uri()
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ENGINE_OPTIONS = {"pool_pre_ping": True, "pool_size": 10}
 
