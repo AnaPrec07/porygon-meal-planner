@@ -101,22 +101,6 @@
     font-size: 16px;
     line-height: 1.6;
     color: #1c2430;
-    margin-bottom: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-
-  .user-bubble {
-    background: #7fd1a9;
-    color: #fff;
-    margin-left: auto;
-    text-align: right;
-  }
-
-  .assistant-bubble {
-    background: #e6e6e6;
-    color: #1c2430;
-    margin-right: auto;
-    text-align: left;
   }
 
   .timestamp {
@@ -199,14 +183,11 @@
 
   <!-- Chat -->
   <div class="chat-area">
-    {% for message in messages %}
-      <div class="chat-bubble {% if message.role == 'user' %}user-bubble{% elif message.role == 'assistant' %}assistant-bubble{% endif %}">
-        {{ message.content }}
-        {% if message.timestamp %}
-          <div class="timestamp">{{ message.timestamp }}</div>
-        {% endif %}
-      </div>
-    {% endfor %}
+    <div class="chat-bubble">
+      Hi there! 👋 I'm your nutrition coach, and I'm here to support you on your health journey! Whether you need meal plans, grocery lists, or just some motivation – I've got you covered. How can I help you today?
+      <div class="timestamp">09:37 AM</div>
+    </div>
+
     <div class="mic-button">🎤</div>
   </div>
 

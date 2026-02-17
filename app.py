@@ -1,13 +1,13 @@
-"""Porygon Meal Planner API - Flask, Firebase Auth, Cloud SQL, optional Vertex AI."""
+
 import os
 
 from flask import Flask
 
 from server.config import Config
 from server.models import db
-from server.auth_firebase import init_firebase_admin
 # --- Server-rendered HTML routes ---
 from flask import render_template, request, redirect, url_for, session
+from flask_login import UserMixin, login_user, login_manager,login_required, logout_user, current_user
 
 
 def create_app(config_class=Config):
@@ -21,7 +21,6 @@ def create_app(config_class=Config):
     return app
 
 app = create_app()
-init_firebase_admin()
 
 
 # Mock data for demonstration
@@ -59,8 +58,12 @@ UPCOMING_MILESTONES = [
     "Week 4: First month milestone",
 ]
 
+@app.route("/")
+def test():
+    return render_template("test_home.html")
 
-@app.route("/", methods=["GET", "POST"])
+
+@app.route("/chat", methods=["GET", "POST"])
 def chat():
     if "messages" not in session:
         session["messages"] = []
